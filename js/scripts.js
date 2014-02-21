@@ -12,3 +12,18 @@ var scrabble = function(word) {
     return "Error: please enter letters only";
   }
 };
+
+$(function(){
+ $("form#scrabble-entry").submit(function(event){
+    var word = $("input#word").val();
+    var result = scrabble(word);
+
+    $(".word").text(word);
+    $(".result-word").text(result);
+    
+    $('#result').show();
+    event.preventDefault();
+ });
+  
+}); 
+  
