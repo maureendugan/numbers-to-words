@@ -22,6 +22,9 @@ var numbersToWord = function(number) {
   var numberString = number.toString();
   var length = numberString.length;
   var place = Math.ceil((length)/3);
+  var sliceHere = length - ((place-1) * 3);
+  var firstNumberString = numberString.slice(0,sliceHere);
+  var secondNumberString = numberString.slice(sliceHere);
   var result;
 
   if (number < 100) {
@@ -29,8 +32,7 @@ var numbersToWord = function(number) {
   } else if (number < 1000) {
     result = ones[numberString.charAt(0)] + places[place] + oneToNinetyNine(number % 100);
   } else /*if (number < 1000000)*/ {
-    var splitAtComma = (number / 1000).toString().split('.');
-    result = numbersToWord(splitAtComma[0]) + places[place]+ numbersToWord(splitAtComma[1]); 
+    result = numbersToWord() + places[place]+ numbersToWord(splitAtComma[1]); 
   }
   return result;
 };

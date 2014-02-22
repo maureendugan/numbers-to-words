@@ -12,7 +12,18 @@ describe('numbersToWord', function() {
     numbersToWord(25).should.equal('twenty five');
   });
   it('returns a phrase for a three digit number less than 110', function() {
-    numbersToWord(908).should.equal('nine hundred eight');
+    numbersToWord(998).should.equal('nine hundred ninety eight');
   });
+  it ('returns a phrase for number between one thousand and less that one million', function() {
+    numbersToWord(364555).should.equal('three hundred sixty four thousand five hundred fifty five');
+  });
+  it ('returns a phrase for number between greater than one million', function() {
+    numbersToWord(5364555).should.equal('five million three hundred sixty four thousand five hundred fifty five');
+  });
+});
 
+describe('oneToNinetyNine', function() {
+  it('returns a number less than one hundred in words', function() {
+    oneToNinetyNine(64).should.equal('sixty four');
+  });
 });
