@@ -20,6 +20,13 @@ describe('numbersToWord', function() {
   it ('returns a phrase for number between greater than one million', function() {
     numbersToWord(5364555).should.equal('five million three hundred sixty four thousand five hundred fifty five');
   });
+   it ('returns a phrase for number between greater than one million', function() {
+    numbersToWord(33335364555).should.equal('thirty three billion three hundred thirty five million three hundred sixty four thousand five hundred fifty five');
+  });
+   it ('returns a phrase for number between greater than one million', function() {
+    numbersToWord(1000000).should.equal('one million');
+  });
+
 });
 
 describe('oneToNinetyNine', function() {
