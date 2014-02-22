@@ -32,7 +32,7 @@ var numbersToWord = function(number) {
   } else if (number < 1000) {
     result = ones[numberString.charAt(0)] + places[place] + oneToNinetyNine(number % 100);
   } else /*if (number < 1000000)*/ {
-    result = numbersToWord() + places[place]+ numbersToWord(splitAtComma[1]); 
+    result = numbersToWord(parseInt(firstNumberString)) + places[place]+ numbersToWord(parseInt(secondNumberString)); 
   }
   return result;
 };
